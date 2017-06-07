@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 #include <avr/io.h>
+#include <SoftwareSerial.h>
 
-char first[] = "Hello";
-char second[] = "World";
+char first[] = "Testing";
+char second[] = "Example";
 int delayTime = 500;
 
 //Initialize the LCD with the numbers of the interface pin.
@@ -12,6 +13,9 @@ void setup()
 {
   // Set up the number of rows & columns.
   lcd.begin(16, 2);
+  Serial.begin(115200);
+  Serial.println("Interfacfing arduino with nodemcu");
+  sw.begin(115200);
 }
 
 void loop()
@@ -33,4 +37,23 @@ void loop()
     delay(delayTime);
   }
   lcd.clear();
+  // NodeMCU data
+  Serial.println("Sending data to nodemcu");
+  int adc=analogRead(A0);
+  Serial.print("{\"sensorid\":");
+  Serial.print(id);//sensor id
+  Serial.print(",");
+  Serial.print("\"adcValue\":");
+  Serial.print(adc);//offset
+  Serial.print("}");
+  Serial.println();
+  sw.print("{\"sensorid\":");
+  sw.print(id); //sensor id
+  sw.print(",");
+  sw.print("\"adcValue\":");
+  sw.print(adc);//offset
+  sw.print("}");
+  sw.println();
+  delay(5000);
+
 }
