@@ -1,2 +1,2 @@
 # IoTSpeechToText
-WIP using Arduino 101, a sound ampifier and Google's API for Speech to Text. 
+A WIP IoT hearing aid using an Arduino 101, a Grove kit sound sensor, sound ampifier, microphone, and Google Cloud Services. 
