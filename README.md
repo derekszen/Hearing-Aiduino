@@ -1,8 +1,7 @@
 # IntelHacks IoT Hearing Aid
-A WIP IoT hearing aid using an Arduino 101, a Grove kit sound sensor, sound ampifier, microphone, and Google's Cloud speech API. 
+A WIP IoT hearing aid using an Arduino 101, a Grove kit sound sensor, sound ampifier, microphone, an ESP8266, and Google's Cloud speech API. 
 
 
-Currently, development is proceeding with a NodeMCU and an Arduino UNO, until I get an Arduino 101. The LED display has been implemented, and server-side communication is being tested.
+Currently, this repository is a landing page for the different components of the project. There is some code for the LED display (used for initial debuggin) and some leftover config files from previous development done with PlatformIO
 
-
-Development done with PlatformIO. Android Integration a possiblity in the future. 
+The different components of the project can be found here. 
